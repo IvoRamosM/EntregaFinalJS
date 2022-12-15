@@ -227,6 +227,8 @@ tbody tr:nth-child(even) {
 }
 
 
+
+
 @media screen and (width <= 420px) {
 
     .form-checkout {
