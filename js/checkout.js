@@ -27,8 +27,7 @@ const eliminarDelCarrito = (id) => {
     })
   }
 
-const activarClickQuitarBotones= () => {
-    debugger
+const activarClickQuitarBotones = () => {
     const buttonsDelete = document.querySelectorAll("button.button.button-outline.button-quitar")
     buttonsDelete.forEach(btn => {
         btn.addEventListener("click", (e)=> {
@@ -36,3 +35,4 @@ const activarClickQuitarBotones= () => {
         })
     })
 }
+activarClickQuitarBotones()
