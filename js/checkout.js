@@ -1,5 +1,6 @@
 
 const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+const precioTotal = document.getElementById('total-carrito')
 
 function armarTablaCarrito(camiseta) {
     return `<tr>
@@ -25,9 +26,11 @@ recuperarCarrito()
 
 const botonVaciar = document.getElementById('btn-vaciar')
 botonVaciar.addEventListener('click', () => {
-    carrito.length = 0
+    carrito = []
     recuperarCarrito()
 })
+
+precioTotal.innerText = carrito.reduce((acc, camiseta) => acc + camiseta.precio, 0)
 
 // const eliminarDelCarrito = (id) => {
 //     const producto = carrito.find((producto) => producto.id === id);
