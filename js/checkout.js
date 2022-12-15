@@ -28,7 +28,7 @@ const eliminarDelCarrito = (id) => {
   }
 
 const activarClickQuitarBotones = () => {
-    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+    // const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
     const buttonsDelete = document.querySelectorAll("button.button.button-outline.button-quitar")
     buttonsDelete.forEach(btn => {
         btn.addEventListener("click", (e)=> {

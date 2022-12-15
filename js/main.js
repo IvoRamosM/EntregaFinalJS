@@ -39,6 +39,7 @@ function activarClickBotones() {
             let resultado = camisetas.find(cami => cami.id === parseInt(btn.id))
                 carrito.push(resultado)
                 localStorage.setItem("miCarrito", JSON.stringify(carrito))
+                toast(`Camiseta de ${resultado.nombre} se agregó al carrito`)
         })
     })
 }
@@ -61,3 +62,15 @@ inputSearch.addEventListener("search", ()=> {
         cargarCamisetas(camisetas)
     }
 })
+
+const toast = (text)=> {
+    Toastify({
+        text: text,
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: { background:'CornFlowerBlue', fontSize: '17px'}
+      }).showToast();
+}
