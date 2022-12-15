@@ -3,6 +3,14 @@ const busquedas = [ ]
 const imgCarrito = document.getElementById("imgCarrito")
 const containerCards = document.getElementById("containerCards")
 const inputSearch = document.querySelector("input#inputSearch")
+const URL = 'bbdd/camisetas.json'
+const camisetas = []
+
+fetch(URL)
+    .then((response) => data = response.json())
+    .then((data) => camisetas.push(...data)) 
+    .then(() => cargarCamisetas(camisetas)) 
+    .then(() => activarClickBotones()) 
 
 imgCarrito.src = "img/carrito.jpg"
 
@@ -20,14 +28,12 @@ function cargarCamisetas(array) {
                 contenido += retornoCard(camiseta)
             })
             containerCards.innerHTML = contenido 
-            console.log("Se crearon las CARDS")
         }
-} 
-cargarCamisetas(camisetas)
+}
 
-const botonesAdd = document.querySelectorAll(".button-add")
 
 function activarClickBotones() {
+    const botonesAdd = document.querySelectorAll(".button-add") 
     botonesAdd.forEach(btn => {
         btn.addEventListener("click", ()=> {
             let resultado = camisetas.find(cami => cami.id === parseInt(btn.id))
@@ -36,13 +42,15 @@ function activarClickBotones() {
         })
     })
 }
-activarClickBotones()
  
 function filtrarCamisetas() {
         let resultado = camisetas.filter(camiseta => camiseta.nombre.toUpperCase().includes(inputSearch.value.toUpperCase().trim()))
-            if (resultado.length > 0) {
-                cargarCamisetas(resultado)
-            }
+        if (resultado.length > 0) {
+            cargarCamisetas(resultado)
+            activarClickBotones()
+        } else {
+            console.warn("No se han encontrado coincidencias.")
+        }
 }
 
 inputSearch.addEventListener("search", ()=> {

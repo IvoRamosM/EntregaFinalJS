@@ -2,7 +2,7 @@ function armarTablaCarrito(camiseta) {
     return `<tr>
                 <td>${camiseta.nombre}</td>
                 <td>$${camiseta.precio}</td>
-                <td><button class="button button-outline button-add" id="${camiseta.nombre}">X</button></td>
+                <td><button class="button button-outline button-quitar" id="${camiseta.nombre}">X</button></td>
             </tr>`
 }
 

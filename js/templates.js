@@ -9,9 +9,4 @@ function retornoCard(camiseta) {
                 </div>`
     }
     
-    function retornoError() {
-    return `<div class="card-error">
-                <h2>Hubo un incoveniente al cargar la camiseta</h2>
-                <h3>Intenta nuevamente en unos instantes...</h3>
-            </div>`
-    }
+  
