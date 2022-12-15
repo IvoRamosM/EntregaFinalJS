@@ -26,27 +26,10 @@ recuperarCarrito()
 
 const botonVaciar = document.getElementById('btn-vaciar')
 botonVaciar.addEventListener('click', () => {
-    carrito = []
+    localStorage.clear()
+    console.log(localStorage)
     recuperarCarrito()
 })
 
 precioTotal.innerText = carrito.reduce((acc, camiseta) => acc + camiseta.precio, 0)
 
-// const eliminarDelCarrito = (id) => {
-//     const producto = carrito.find((producto) => producto.id === id);
-//     carrito.splice(carrito.indexOf(producto), 1);
-//     carrito.forEach(prod => {
-//     localStorage.setItem("miCarrito", JSON.stringify(carrito))
-//     })
-//   }
-
-// const activarClickQuitarBotones = () => {
-//     // const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
-//     const buttonsDelete = document.querySelectorAll("button.button.button-outline.button-quitar")
-//     buttonsDelete.forEach(btn => {
-//         btn.addEventListener("click", (e)=> {
-//             eliminarDelCarrito(e.target.id)
-//         })
-//     })
-// }
-// activarClickQuitarBotones()

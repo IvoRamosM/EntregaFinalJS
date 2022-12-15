@@ -19,8 +19,6 @@ imgCarrito.addEventListener("mousemove", ()=> {
         imgCarrito.title = `${totalProductos} productos en el carrito`
 })
 
-document.addEventListener("DOMContentLoaded", console.log("Se cargó el HTML"))
-
 function cargarCamisetas(array) {
     let contenido = ""
         if(array.length > 0) {
