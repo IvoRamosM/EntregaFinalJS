@@ -12,15 +12,13 @@ function armarTablaCarrito(camiseta) {
 }
 
 function recuperarCarrito() {
-    let tablaHTML = ""
-    const tbody = document.querySelector("tbody")
-    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [ ];
-    if (carrito.length > 0) {
-        carrito.forEach(camiseta => {
-            tablaHTML += armarTablaCarrito(camiseta)
-        });
-        tbody.innerHTML = tablaHTML
-    }
+	let tablaHTML = "";
+	const tbody = document.querySelector("tbody");
+	const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+	carrito.forEach((camiseta) => {
+		tablaHTML += armarTablaCarrito(camiseta);
+	});
+	tbody.innerHTML = tablaHTML;
 }
 recuperarCarrito()
 
