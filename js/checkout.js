@@ -28,7 +28,9 @@ const botonVaciar = document.getElementById('btn-vaciar')
 botonVaciar.addEventListener('click', () => {
     localStorage.clear()
     console.log(localStorage)
+    precioTotal.innerText = 0
     recuperarCarrito()
+    
 })
 
 precioTotal.innerText = carrito.reduce((acc, camiseta) => acc + camiseta.precio, 0)
